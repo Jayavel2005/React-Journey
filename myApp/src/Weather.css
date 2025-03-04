@@ -1,0 +1,128 @@
+.weather-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: linear-gradient(135deg, #00b4db, #0083b0);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+.weather-container h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.search-form {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.city-input {
+    flex: 1;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    background: #2c3e50;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.search-button:hover {
+    background: #34495e;
+}
+
+.loading {
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 2rem 0;
+}
+
+.error {
+    text-align: center;
+    color: #ff6b6b;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 10px;
+    margin: 1rem 0;
+}
+
+.weather-info {
+    text-align: center;
+}
+
+.weather-info h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.weather-details {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.temperature {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.temp-value {
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+
+.weather-icon {
+    width: 80px;
+    height: 80px;
+}
+
+.weather-description {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-transform: capitalize;
+}
+
+.additional-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.info-item span:first-child {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.info-item span:last-child {
+    font-size: 1.2rem;
+    font-weight: bold;
+}

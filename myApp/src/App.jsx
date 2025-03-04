@@ -3,6 +3,8 @@
 // import Change from "./Change.jsx";
 // import ColorPicker from "./ColorPicker.jsx";
 import ObjectState from "./ObjectState.jsx";
+import Weather from "./Weather.jsx";
+
 function App() {
 
   // const array = [
@@ -55,6 +57,7 @@ function App() {
       {/* <Change /> */}
       {/* <ColorPicker /> */}
 
+      {/* <Weather /> */}
       <ObjectState />
     </>
   );
