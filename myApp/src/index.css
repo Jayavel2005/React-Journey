@@ -40,7 +40,7 @@ body {
     align-items: center;
     color: #fff;
     font-size: 50px;
-    transition: all 0.5s;
+    transition: background-color 0.5s, transform 0.5s;
 }
 
 .color-picker input{
