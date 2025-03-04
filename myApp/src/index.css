@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -12,7 +12,7 @@ body {
 
 }
 
-.color-picker{
+.color-picker {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,13 +24,14 @@ body {
     border-radius: 40px;
     padding: 20px;
 }
-.color-picker h1{
+
+.color-picker h1 {
     margin-bottom: 20px;
     font-size: 40px;
     color: #fff;
 }
 
-.color-box{
+.color-box {
     width: 300px;
     height: 300px;
     border-radius: 20px;
@@ -43,7 +44,7 @@ body {
     transition: background-color 0.5s, transform 0.5s;
 }
 
-.color-picker input{
+.color-picker input {
     width: 300px;
     height: 50px;
     border: none;
@@ -51,4 +52,74 @@ body {
     font-size: 20px;
     text-align: center;
     margin-bottom: 20px;
+}
+
+.name-input {
+    width: 300px;
+    height: 50px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    font-size: 20px;
+    text-align: center;
+    margin: 20px;
+}
+
+p {
+    font-size: 20px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 15px;
+    
+}
+
+.object-state {
+    display: flex;
+    flex-direction: row;
+    background-color: blueviolet;
+    height: fit-content;
+    
+    border-radius: 40px;
+    padding: 20px;
+    color: #fff;
+}
+.main-container{
+    background-color: chocolate;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.box{
+    border: 1px solid #000;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.left-side{
+    display: flex;
+    flex-direction: column;
+}
+
+
+button{
+    width: 100%;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    background-color: #00ffff;
+    color: #000000;
+    font-weight: bold;
 }

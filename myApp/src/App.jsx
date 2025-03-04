@@ -1,7 +1,8 @@
 // / Import the Button component
 // import Counter from './Counter.jsx';
 // import Change from "./Change.jsx";
-import ColorPicker from "./ColorPicker.jsx";
+// import ColorPicker from "./ColorPicker.jsx";
+import ObjectState from "./ObjectState.jsx";
 function App() {
 
   // const array = [
@@ -52,7 +53,9 @@ function App() {
       {/* <Counter /> */}
 
       {/* <Change /> */}
-      <ColorPicker />
+      {/* <ColorPicker /> */}
+
+      <ObjectState />
     </>
   );
 }
