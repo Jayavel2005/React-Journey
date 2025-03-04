@@ -65,7 +65,7 @@ const ObjectState = () => {
                         </label>
                     </div>
 
-                    {/* for office mobile number */}
+                    {/* zfor office mobile number */}
 
                     <div className="box mobile">
                         <label htmlFor="phoneNumberMobile">
