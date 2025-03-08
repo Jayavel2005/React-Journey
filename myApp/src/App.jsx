@@ -4,7 +4,13 @@
 // import ColorPicker from "./ColorPicker.jsx";
 // import ObjectState from "./ObjectState.jsx";
 // import Weather from "./Weather.jsx";
-import MyComponent from "./MyComponent.jsx";
+// import MyComponent from "./MyComponent.jsx";
+// import NameChanger from "./NameChanger.jsx";
+// import List from "./List.jsx";
+// import UserGreeting from "./UserGreeting.jsx";
+// import Student from "./Student.jsx";
+// import Button from "./Button.jsx";
+import ArrayObjcts from "./ArrayObjects.jsx";
 
 function App() {
 
@@ -60,7 +66,8 @@ function App() {
 
       {/* <Weather /> */}
       {/* <ObjectState /> */}
-      <MyComponent />
+      {/* <MyComponent /> */}
+      <ArrayObjcts />
     </>
   );
 }

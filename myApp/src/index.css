@@ -145,3 +145,28 @@ li:hover{
     background-color: #000000;
     color: #fff;
 }
+
+input[type="text"],input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.carDetials{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    background-color: #00ffff;
+}
+hr{
+    width: 100%;
+    margin: 10px;
+    border: 1px solid #000;
+}
