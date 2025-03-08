@@ -2,8 +2,9 @@
 // import Counter from './Counter.jsx';
 // import Change from "./Change.jsx";
 // import ColorPicker from "./ColorPicker.jsx";
-import ObjectState from "./ObjectState.jsx";
-import Weather from "./Weather.jsx";
+// import ObjectState from "./ObjectState.jsx";
+// import Weather from "./Weather.jsx";
+import MyComponent from "./MyComponent.jsx";
 
 function App() {
 
@@ -58,7 +59,8 @@ function App() {
       {/* <ColorPicker /> */}
 
       {/* <Weather /> */}
-      <ObjectState />
+      {/* <ObjectState /> */}
+      <MyComponent />
     </>
   );
 }

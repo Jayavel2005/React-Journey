@@ -72,7 +72,7 @@ p {
 
 h1 {
     text-align: center;
-    color: #fff;
+    color: #ffd30e;
     font-family: Arial, Helvetica, sans-serif;
     margin-bottom: 15px;
     
@@ -122,4 +122,26 @@ button{
     background-color: #00ffff;
     color: #000000;
     font-weight: bold;
+}
+.text-input{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+li{
+    list-style: none;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: #00ffff;  
+}
+li:hover{
+    background-color: #000000;
+    color: #fff;
 }
