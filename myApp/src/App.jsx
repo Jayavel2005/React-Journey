@@ -10,8 +10,10 @@
 // import UserGreeting from "./UserGreeting.jsx";
 // import Student from "./Student.jsx";
 // import Button from "./Button.jsx";
-import ArrayObjcts from "./ArrayObjects.jsx";
+// import ArrayObjcts from "./ArrayObjects.jsx";
+// import TODO from "./TODOD.jsx";
 
+import TodoApp from "./TodoApp.jsx";
 function App() {
 
   // const array = [
@@ -67,7 +69,8 @@ function App() {
       {/* <Weather /> */}
       {/* <ObjectState /> */}
       {/* <MyComponent /> */}
-      <ArrayObjcts />
+      {/* <ArrayObjcts /> */}
+      <TodoApp />
     </>
   );
 }

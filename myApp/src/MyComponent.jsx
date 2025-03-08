@@ -4,7 +4,7 @@ import { useState } from "react";
 const MyComponent = () => {
 
 
-    const [foods, setFood] = useState(["Apple", "Orange", "Grapes","Banana"]);
+    const [foods, setFood] = useState(["Apple", "Orange", "Grapes", "Banana"]);
 
     const textInput = document.querySelector(".text-input");
 
@@ -12,7 +12,7 @@ const MyComponent = () => {
     const handleAddFood = () => {
         const food = textInput.value;
         if (food) {
-            setFood(f=>[...foods, food]);
+            setFood(f => [...foods, food]);
         }
         return alert("Please enter a food");
     }
