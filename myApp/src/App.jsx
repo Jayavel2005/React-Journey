@@ -12,8 +12,8 @@
 // import Button from "./Button.jsx";
 // import ArrayObjcts from "./ArrayObjects.jsx";
 // import TODO from "./TODOD.jsx";
-
-import TodoApp from "./TodoApp.jsx";
+// import TodoApp from "./TodoApp.jsx";
+import EffectHook from "./EffectHook.jsx";
 function App() {
 
   // const array = [
@@ -70,7 +70,8 @@ function App() {
       {/* <ObjectState /> */}
       {/* <MyComponent /> */}
       {/* <ArrayObjcts /> */}
-      <TodoApp />
+      {/* <TodoApp /> */}
+      <EffectHook />
     </>
   );
 }
