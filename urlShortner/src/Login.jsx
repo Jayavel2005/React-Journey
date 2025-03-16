@@ -57,7 +57,7 @@ const Login = () => {
         }
 
         if (!emailRegex.test(email)) {
-            setEmailErrorMessage("Enter a valid @gmail.com email address");
+            setEmailErrorMessage("Enter a valid email address");
             setEmailBorderColor("red");
             return false;
         }

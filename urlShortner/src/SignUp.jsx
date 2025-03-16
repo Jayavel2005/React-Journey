@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { use } from 'react';
 import { useState } from 'react';
 
 const SignUp = () => {
@@ -8,9 +8,10 @@ const SignUp = () => {
         userEmail: "",
         userPassword: "",
     }
-    
+
     const [user, setUser] = useState(userDetails);
-    const [nameErrorMessage, setNameErrorMessage] = useState("")
+    const [nameErrorMessage, setNameErrorMessage] = useState("");
+    const [emailErrorMessage, setEmailErrorMessage] = useState("");
 
     // Handling Name Changing
     const handleChangeName = (e) => {
@@ -38,6 +39,37 @@ const SignUp = () => {
         }
     }
 
+    // Handle Email Changing
+    const handleChangeEmail = (e) => {
+        const newEmail = e.target.value;
+        setUser((prevUser) => (
+            { ...prevUser, userEmail: newEmail }
+        ));
+
+        validateEmail(newEmail);
+
+    }
+    // Handling Email Validation
+    const validateEmail = (newEmail) => {
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+
+        if (newEmail.trim() === "") {
+            setEmailErrorMessage("Email is required.")
+
+        }
+        else if (!emailRegex.test(newEmail)) {
+            setEmailErrorMessage("Enter a valid email address")
+        }
+        else if (newEmail !== newEmail.toLowerCase()) {
+            setEmailErrorMessage("Email should be in lowercase only.")
+        }
+        else {
+            setEmailErrorMessage("")
+        }
+    }
+    
+    
+
 
     return (
         <div>
@@ -47,11 +79,11 @@ const SignUp = () => {
                 {/* Name input */}
                 <div className="form--group">
                     <label htmlFor="Name" className="form--label">Name</label>
-                    <input type="text" name='Name' id='Name' placeholder='Enter your name..'  onChange={handleChangeName} aria-live='polite'
-                    style={{border : nameErrorMessage ? "1px solid red" : "1px solid #ccc"}} />
+                    <input type="text" name='Name' id='Name' placeholder='Enter your name..' onChange={handleChangeName} aria-live='polite'
+                        style={{ border: nameErrorMessage ? "1px solid red" : "1px solid #ccc" }} />
                     <span
                         className='informative--message'
-                        style={{color: "red", display : nameErrorMessage ? "block" : "none"}}>
+                        style={{ color: "red", display: nameErrorMessage ? "block" : "none" }}>
                         {nameErrorMessage}</span>
                 </div>
 
@@ -59,14 +91,24 @@ const SignUp = () => {
 
                 <div className="form--group">
                     <label htmlFor="Email" className='form--label'>Email</label>
-                    <input type="text" name='Email' id='Email' placeholder='Enter your email address'  />
-                    <span className='informative--message'>Invalid Email</span>
+                    <input
+                        type="text"
+                        name='Email'
+                        id='Email'
+                        placeholder='Enter your email address'
+                        onChange={handleChangeEmail}
+                        style={{border : emailErrorMessage ? "1px solid red" : "1px solid #ccc"}}
+                    />
+                    <span
+                        className='informative--message'
+                        style={{color : "red", display : emailErrorMessage ? "block" : "none"}}
+                    >{emailErrorMessage}</span>
                 </div>
 
                 {/* Password */}
                 <div className="form--group">
                     <label htmlFor="Password" className="form--label">Password</label>
-                    <input type="password" name="Password" id="Password" placeholder='Enter your password'  />
+                    <input type="password" name="Password" id="Password" placeholder='Enter your password' />
                     <span className='informative--message'>Invalid password</span>
                 </div>
 
