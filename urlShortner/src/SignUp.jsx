@@ -12,6 +12,7 @@ const SignUp = () => {
     const [user, setUser] = useState(userDetails);
     const [nameErrorMessage, setNameErrorMessage] = useState("");
     const [emailErrorMessage, setEmailErrorMessage] = useState("");
+    const [passwordErrorMessage, setPasswordErrorMessage] = useState("");
 
     // Handling Name Changing
     const handleChangeName = (e) => {
@@ -27,16 +28,20 @@ const SignUp = () => {
     const validateName = (newName) => {
         if (newName.trim() === "") {
             setNameErrorMessage("Name is requied.");
+            return false;
         }
         else if (newName.length < 2) {
             setNameErrorMessage("Name must be atleast 2 characters.")
+            return false;
         }
         else if (!/^[a-zA-Z\s]+$/.test(newName)) {
             setNameErrorMessage("Only letters and spaces are allowed.")
+            return false;
         }
         else {
             setNameErrorMessage("");
         }
+        return true;
     }
 
     // Handle Email Changing
@@ -67,9 +72,47 @@ const SignUp = () => {
             setEmailErrorMessage("")
         }
     }
-    
-    
 
+    const handleChangePassword = (e) => {
+        const newPassword = e.target.value;
+        setUser((prevUser) =>
+        (
+            { ...prevUser, userPassword: newPassword }
+        ))
+
+        validatePassword(newPassword)
+    }
+
+    const validatePassword = (newPassword) => {
+        if (newPassword === "") {
+            setPasswordErrorMessage("Password is required.")
+        }
+        else if (newPassword.length < 8) {
+            setPasswordErrorMessage("Minimum 8 characters required");
+        }
+        else if (!/[A-Z]/.test(newPassword)) {
+            setPasswordErrorMessage("Password must contain at least one uppercase letter");
+
+        }
+        else if (!/[a-z]/.test(newPassword)) {
+            setPasswordErrorMessage("Password must contain at least one lowercase letter");
+
+        }
+        else if (!/[^A-Za-z0-9]/.test(newPassword)) {
+            setPasswordErrorMessage("Password must contain at least one special character");
+
+        }
+        
+
+        else {
+            setPasswordErrorMessage("");
+        }
+    }
+
+    const handleSignUp = (e) =>{
+        e.preventDefault();
+       
+    }
 
     return (
         <div>
@@ -97,24 +140,35 @@ const SignUp = () => {
                         id='Email'
                         placeholder='Enter your email address'
                         onChange={handleChangeEmail}
-                        style={{border : emailErrorMessage ? "1px solid red" : "1px solid #ccc"}}
+                        style={{ border: emailErrorMessage ? "1px solid red" : "1px solid #ccc" }}
                     />
                     <span
                         className='informative--message'
-                        style={{color : "red", display : emailErrorMessage ? "block" : "none"}}
+                        style={{ color: "red", display: emailErrorMessage ? "block" : "none" }}
                     >{emailErrorMessage}</span>
                 </div>
 
                 {/* Password */}
                 <div className="form--group">
                     <label htmlFor="Password" className="form--label">Password</label>
-                    <input type="password" name="Password" id="Password" placeholder='Enter your password' />
-                    <span className='informative--message'>Invalid password</span>
+                    <input
+                        type="password"
+                        name="Password"
+                        id="Password"
+                        placeholder='Enter your password'
+                        onChange={handleChangePassword}
+                        style={{ border: passwordErrorMessage ? "1px solid red" : "1px solid #ccc" }} />
+                    <span
+                        className='informative--message'
+                        style={{ color: 'red', display: passwordErrorMessage ? "block" : "none" }}>
+
+                        {passwordErrorMessage}
+                    </span>
                 </div>
 
                 {/* Sign Up button */}
                 <div className="form--group">
-                    <button className='signup--button'>Sign Up</button>
+                    <button className='signup--button' onClick={handleSignUp}>Sign Up</button>
                     <span className='login--link'>Already have an account ? <a href="#">Login</a></span>
                 </div>
 

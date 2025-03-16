@@ -56,27 +56,33 @@ const Login = () => {
             return false;
         }
 
-        if (!emailRegex.test(email)) {
+        else if (!emailRegex.test(email)) {
             setEmailErrorMessage("Enter a valid email address");
             setEmailBorderColor("red");
             return false;
         }
-        if (email !== email.toLowerCase()) {
+        else if (email !== email.toLowerCase()) {
             setEmailErrorMessage("Email should be in lowercase only.");
             setEmailBorderColor("red");
             return false;
         }
-        
-        
+
+
 
         // Reset error if valid
-        setEmailErrorMessage("");
-        setEmailBorderColor("#ccc");
-        return true;
+        else {
+            setEmailErrorMessage("");
+            setEmailBorderColor("#ccc");
+            return true;
+        }
     };
 
     const passwordValidator = (password) => {
-        if (password.length < 8) {
+
+        if (password === "") {
+            setPasswordErrorMessage("Email is required.")
+        }
+        else if (password.length < 8) {
             setPasswordErrorMessage("Minimum 8 characters required");
             setPasswordBorderColor("red");
             return false;
