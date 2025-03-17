@@ -48,11 +48,13 @@ input::placeholder {
   color: rgb(120, 120, 120);
 }
 
-.form--group .informative--message {
+.informative--message {
   font-size: 15px;
-  margin: 1px;
+  margin-top: 2px;
   display: none;
 }
+
+
 
 .error-message {
   color: red;
@@ -87,15 +89,16 @@ input::placeholder {
 }
 
 @keyframes animate {
-  0%{
-      transform: translateY(0) rotate(0deg);
-      opacity: 1;
-      border-radius: 0;
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+    border-radius: 0;
   }
-  100%{
-      transform: translateY(-10000px) rotate(720deg);
-      opacity: 0;
-      border-radius: 50%;
+
+  100% {
+    transform: translateY(-10000px) rotate(720deg);
+    opacity: 0;
+    border-radius: 50%;
   }
 }
 
@@ -111,6 +114,106 @@ input::placeholder {
   overflow: hidden;
   z-index: -1;
 }
+
+/* Url Shortner Component */
+
+.urlshortner--main {
+  background-color: #ffffff;
+  padding: 45px 10px;
+  border-radius: 20px;
+  box-shadow: 1px 1px 15px rgba(255, 255, 255, 0.9);
+  max-width: 500px;
+  width: 550px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.urlshortner--main h1 {
+  text-align: center;
+
+}
+
+.link--container {
+  display: flex;
+  justify-content: center;
+
+}
+
+.input--box {
+  border: 1px solid #ff8400;
+  width: 350px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 30px;
+}
+
+.input--box input {
+  padding: 15px;
+  width: 100%;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+}
+
+.input--box input::placeholder {
+  color: #666666;
+  font-weight: 500 !important;
+}
+
+.input--box button {
+  padding: 0px 35px;
+  border-radius: 30px;
+  border: none;
+  background-color: #ff8400;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.input--box button:hover {
+  background-color: #eb7a00;
+
+}
+
+.clipboard--main {
+  display: flex;
+  margin-top: 40px;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 350px;
+  /* border: 1px solid black; */
+}
+
+.clipboard--textfieldGroup {
+  display: flex;
+}
+
+.clipboard--textfield {
+  border: 1px solid #005eff;
+  padding: 15px;
+  width: 100%;
+  border-radius: 10px 0px 0px 10px;
+  outline: none;
+}
+
+.copy--button {
+  padding: 1px 30px;
+  border-radius: 0px 10px 10px 0px;
+  border: none;
+  background-color: #005eff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.copy--button:hover {
+  background-color: #0052e0;
+
+}
+
+
+/* Background Animation */
 .background li {
   position: absolute;
   display: block;
@@ -121,9 +224,6 @@ input::placeholder {
   animation: animate 12s linear infinite;
 }
 
-
-
-
 .background li:nth-child(0) {
   left: 65%;
   width: 98px;
@@ -131,6 +231,7 @@ input::placeholder {
   bottom: -98px;
   animation-delay: 1s;
 }
+
 .background li:nth-child(1) {
   left: 75%;
   width: 102px;
@@ -138,6 +239,7 @@ input::placeholder {
   bottom: -102px;
   animation-delay: 4s;
 }
+
 .background li:nth-child(2) {
   left: 65%;
   width: 103px;
@@ -145,6 +247,7 @@ input::placeholder {
   bottom: -103px;
   animation-delay: 9s;
 }
+
 .background li:nth-child(3) {
   left: 30%;
   width: 24px;
@@ -152,6 +255,7 @@ input::placeholder {
   bottom: -24px;
   animation-delay: 6s;
 }
+
 .background li:nth-child(4) {
   left: 4%;
   width: 162px;
@@ -159,6 +263,7 @@ input::placeholder {
   bottom: -162px;
   animation-delay: 20s;
 }
+
 .background li:nth-child(5) {
   left: 31%;
   width: 45px;
@@ -166,6 +271,7 @@ input::placeholder {
   bottom: -45px;
   animation-delay: 17s;
 }
+
 .background li:nth-child(6) {
   left: 20%;
   width: 7px;
@@ -173,6 +279,7 @@ input::placeholder {
   bottom: -7px;
   animation-delay: 3s;
 }
+
 .background li:nth-child(7) {
   left: 35%;
   width: 75px;
@@ -180,6 +287,7 @@ input::placeholder {
   bottom: -75px;
   animation-delay: 7s;
 }
+
 .background li:nth-child(8) {
   left: 59%;
   width: 134px;
@@ -187,6 +295,7 @@ input::placeholder {
   bottom: -134px;
   animation-delay: 13s;
 }
+
 .background li:nth-child(9) {
   left: 13%;
   width: 126px;
@@ -194,6 +303,7 @@ input::placeholder {
   bottom: -126px;
   animation-delay: 7s;
 }
+
 .background li:nth-child(10) {
   left: 15%;
   width: 132px;
@@ -201,6 +311,7 @@ input::placeholder {
   bottom: -132px;
   animation-delay: 30s;
 }
+
 .background li:nth-child(11) {
   left: 44%;
   width: 98px;
@@ -208,6 +319,7 @@ input::placeholder {
   bottom: -98px;
   animation-delay: 50s;
 }
+
 .background li:nth-child(12) {
   left: 32%;
   width: 123px;
@@ -215,6 +327,7 @@ input::placeholder {
   bottom: -123px;
   animation-delay: 50s;
 }
+
 .background li:nth-child(13) {
   left: 18%;
   width: 163px;
@@ -222,6 +335,7 @@ input::placeholder {
   bottom: -163px;
   animation-delay: 2s;
 }
+
 .background li:nth-child(14) {
   left: 61%;
   width: 12px;
@@ -229,6 +343,7 @@ input::placeholder {
   bottom: -12px;
   animation-delay: 63s;
 }
+
 .background li:nth-child(15) {
   left: 56%;
   width: 155px;
