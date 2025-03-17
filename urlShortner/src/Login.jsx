@@ -9,6 +9,8 @@ const Login = () => {
     const [user, setUser] = useState(userDetails);
     const [emailErrorMessage, setEmailErrorMessage] = useState("");
     const [passwordErrorMessage, setPasswordErrorMessage] = useState("");
+    const [page, setPage] = useState("Login")
+
 
 
     const handleLogin = (e) => {
@@ -106,6 +108,15 @@ const Login = () => {
         return true;
     };
 
+
+    const changePageState = () => {
+        setPage("SignUp")
+        console.log(page);
+        
+    }
+
+
+
     return (
         <div>
             <form className="login--main">
@@ -153,7 +164,12 @@ const Login = () => {
                 <div className="form--group">
                     <button className="login--button" onClick={handleLogin}>Login</button>
                     <span className="signup--link">
-                        Don't have an account? <a href="#" className="signupPage--link">Create account</a>
+                        Don't have an account?
+                        <a
+                            href="#"
+                            className="signupPage--link"
+                            onClick={changePageState}
+                        >Create account</a>
                     </span>
                 </div>
             </form>

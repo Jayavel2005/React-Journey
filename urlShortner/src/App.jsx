@@ -4,8 +4,7 @@ import Login from './Login'
 const App = () => {
   return (
     <div className='main'>
-      {/* <SignUp/> */}
-      <Login />
+        <Login/>
     </div>
   )
 }
