@@ -28,14 +28,23 @@ const SignUp = () => {
     const validateName = (newName) => {
         if (newName.trim() === "") {
             setNameErrorMessage("Name is requied.");
+            setInterval(() => {
+                setNameErrorMessage("");
+            }, 2000)
             return false;
         }
         else if (newName.length < 2) {
             setNameErrorMessage("Name must be atleast 2 characters.")
+            setInterval(() => {
+                setNameErrorMessage("");
+            }, 2000)
             return false;
         }
         else if (!/^[a-zA-Z\s]+$/.test(newName)) {
-            setNameErrorMessage("Only letters and spaces are allowed.")
+            setNameErrorMessage("Only letters and spaces are allowed.");
+            setInterval(() => {
+                setNameErrorMessage("");
+            }, 2000)
             return false;
         }
         else {
@@ -60,19 +69,32 @@ const SignUp = () => {
 
         if (newEmail.trim() === "") {
             setEmailErrorMessage("Email is required.")
+            setInterval(() => {
+                setEmailErrorMessage("")
+            }, 2000);
+            return false;
 
         }
         else if (!emailRegex.test(newEmail)) {
             setEmailErrorMessage("Enter a valid email address")
+            setInterval(() => {
+                setEmailErrorMessage("")
+            }, 2000);
+            return false;
         }
         else if (newEmail !== newEmail.toLowerCase()) {
             setEmailErrorMessage("Email should be in lowercase only.")
+            setInterval(() => {
+                setEmailErrorMessage("")
+            }, 2000);
+            return false;
         }
         else {
             setEmailErrorMessage("")
         }
+        return true;
     }
-
+    // Handle Change Password
     const handleChangePassword = (e) => {
         const newPassword = e.target.value;
         setUser((prevUser) =>
@@ -82,36 +104,71 @@ const SignUp = () => {
 
         validatePassword(newPassword)
     }
-
+    // Handling Password Validation
     const validatePassword = (newPassword) => {
         if (newPassword === "") {
             setPasswordErrorMessage("Password is required.")
+            setInterval(() => {
+                setPasswordErrorMessage("");
+            }, 2000)
+            return false;
         }
         else if (newPassword.length < 8) {
             setPasswordErrorMessage("Minimum 8 characters required");
+            setInterval(() => {
+                setPasswordErrorMessage("");
+            }, 2000)
+            return false;
         }
         else if (!/[A-Z]/.test(newPassword)) {
             setPasswordErrorMessage("Password must contain at least one uppercase letter");
+            setInterval(() => {
+                setPasswordErrorMessage("");
+            }, 2000)
+            return false;
 
         }
         else if (!/[a-z]/.test(newPassword)) {
             setPasswordErrorMessage("Password must contain at least one lowercase letter");
-
+            setInterval(() => {
+                setPasswordErrorMessage("");
+            }, 2000)
+            return false;
         }
         else if (!/[^A-Za-z0-9]/.test(newPassword)) {
             setPasswordErrorMessage("Password must contain at least one special character");
+            setInterval(() => {
+                setPasswordErrorMessage("");
+            }, 2000)
+            return false;
 
         }
-        
+
 
         else {
             setPasswordErrorMessage("");
         }
+        return true;
     }
 
-    const handleSignUp = (e) =>{
+    // Handling SignUp 
+    const handleSignUp = (e) => {
         e.preventDefault();
-       
+        const isName = validateName(user.userName);
+        const isEmail = validateEmail(user.userEmail);
+        const isPassword = validatePassword(user.userPassword);
+
+        console.log(`Name : ${isName}, Password : ${isEmail} Password : ${isPassword}`);
+        if (!isName || !isEmail || !isPassword) {
+            return;
+        }
+
+        setNameErrorMessage("");
+        setEmailErrorMessage("");
+        setPasswordErrorMessage("");
+        alert("SignUp Successfully!")
+
+
     }
 
     return (

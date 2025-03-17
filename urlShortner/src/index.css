@@ -15,7 +15,8 @@
 
 }
 
-.login--main, .signup--main{
+.login--main,
+.signup--main {
   background-color: rgb(255, 255, 255);
   width: 350px;
   padding: 30px;
@@ -53,11 +54,13 @@ input::placeholder {
   display: none;
 }
 
-.error-message{
+.error-message {
   color: red;
   display: block;
 }
-.login--button, .signup--button{
+
+.login--button,
+.signup--button {
   background-color: #0080ff;
   border: none;
   padding: 10px 0px;
@@ -67,16 +70,18 @@ input::placeholder {
   border-radius: 5px;
 }
 
-.login--button:hover,.signup--button:hover {
+.login--button:hover,
+.signup--button:hover {
   background-color: #0073e6;
 
 }
 
-.signup--link, .login--link {
+.signup--link,
+.login--link {
   margin-top: 10px;
   text-align: center;
 }
 
-.signupPage--link{
+.signupPage--link {
   text-decoration: none;
 }
