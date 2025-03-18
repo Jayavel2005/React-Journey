@@ -6,8 +6,8 @@ import UrlShortner from './UrlShortner'
 const App = () => {
   return (
     <div className='main'>
-        <UrlShortner/>
         <Background/>
+        <Login/>
     </div>
   )
 }

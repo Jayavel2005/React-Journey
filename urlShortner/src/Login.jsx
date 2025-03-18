@@ -53,18 +53,25 @@ const Login = () => {
 
         if (email.trim() === "") {
             setEmailErrorMessage("Email is required.");
+            setTimeout(() => {
+                setEmailErrorMessage("");
+            }, 3000);
 
             return false;
         }
 
         else if (!emailRegex.test(email)) {
             setEmailErrorMessage("Enter a valid email address");
-
+            setTimeout(() => {
+                setEmailErrorMessage("");
+            }, 3000);
             return false;
         }
         else if (email !== email.toLowerCase()) {
             setEmailErrorMessage("Email should be in lowercase only.");
-
+            setTimeout(() => {
+                setEmailErrorMessage("");
+            }, 3000);
             return false;
         }
 
@@ -82,23 +89,35 @@ const Login = () => {
 
         if (password === "") {
             setPasswordErrorMessage("Password is required.");
+            setTimeout(() => {
+                setPasswordErrorMessage("");
+            }, 3000);
 
             return false;
         }
         else if (password.length < 8) {
             setPasswordErrorMessage("Minimum 8 characters required");
+            setTimeout(() => {
+                setPasswordErrorMessage("");
+            }, 3000);
             return false;
         } else if (!/[A-Z]/.test(password)) {
             setPasswordErrorMessage("Password must contain at least one uppercase letter");
-
+            setTimeout(() => {
+                setPasswordErrorMessage("");
+            }, 3000);
             return false;
         } else if (!/[a-z]/.test(password)) {
             setPasswordErrorMessage("Password must contain at least one lowercase letter");
-
+            setTimeout(() => {
+                setPasswordErrorMessage("");
+            }, 3000);
             return false;
         } else if (!/[^A-Za-z0-9]/.test(password)) {
             setPasswordErrorMessage("Password must contain at least one special character");
-
+            setTimeout(() => {
+                setPasswordErrorMessage("");
+            }, 3000);
             return false;
         }
 
@@ -112,7 +131,7 @@ const Login = () => {
     const changePageState = () => {
         setPage("SignUp")
         console.log(page);
-        
+
     }
 
 

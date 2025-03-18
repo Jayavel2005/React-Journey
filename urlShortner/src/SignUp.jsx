@@ -28,21 +28,21 @@ const SignUp = () => {
     const validateName = (newName) => {
         if (newName.trim() === "") {
             setNameErrorMessage("Name is requied.");
-            setInterval(() => {
+            setTimeout(() => {
                 setNameErrorMessage("");
             }, 2000)
             return false;
         }
         else if (newName.length < 2) {
             setNameErrorMessage("Name must be atleast 2 characters.")
-            setInterval(() => {
+            setTimeout(() => {
                 setNameErrorMessage("");
             }, 2000)
             return false;
         }
         else if (!/^[a-zA-Z\s]+$/.test(newName)) {
             setNameErrorMessage("Only letters and spaces are allowed.");
-            setInterval(() => {
+            setTimeout(() => {
                 setNameErrorMessage("");
             }, 2000)
             return false;
@@ -69,7 +69,7 @@ const SignUp = () => {
 
         if (newEmail.trim() === "") {
             setEmailErrorMessage("Email is required.")
-            setInterval(() => {
+            setTimeout(() => {
                 setEmailErrorMessage("")
             }, 2000);
             return false;
@@ -77,14 +77,14 @@ const SignUp = () => {
         }
         else if (!emailRegex.test(newEmail)) {
             setEmailErrorMessage("Enter a valid email address")
-            setInterval(() => {
+            setTimeout(() => {
                 setEmailErrorMessage("")
             }, 2000);
             return false;
         }
         else if (newEmail !== newEmail.toLowerCase()) {
             setEmailErrorMessage("Email should be in lowercase only.")
-            setInterval(() => {
+            setTimeout(() => {
                 setEmailErrorMessage("")
             }, 2000);
             return false;
@@ -108,21 +108,21 @@ const SignUp = () => {
     const validatePassword = (newPassword) => {
         if (newPassword === "") {
             setPasswordErrorMessage("Password is required.")
-            setInterval(() => {
+            setTimeout(() => {
                 setPasswordErrorMessage("");
             }, 2000)
             return false;
         }
         else if (newPassword.length < 8) {
             setPasswordErrorMessage("Minimum 8 characters required");
-            setInterval(() => {
+            setTimeout(() => {
                 setPasswordErrorMessage("");
             }, 2000)
             return false;
         }
         else if (!/[A-Z]/.test(newPassword)) {
             setPasswordErrorMessage("Password must contain at least one uppercase letter");
-            setInterval(() => {
+            setTimeout(() => {
                 setPasswordErrorMessage("");
             }, 2000)
             return false;
@@ -130,14 +130,14 @@ const SignUp = () => {
         }
         else if (!/[a-z]/.test(newPassword)) {
             setPasswordErrorMessage("Password must contain at least one lowercase letter");
-            setInterval(() => {
+            setTimeout(() => {
                 setPasswordErrorMessage("");
             }, 2000)
             return false;
         }
         else if (!/[^A-Za-z0-9]/.test(newPassword)) {
             setPasswordErrorMessage("Password must contain at least one special character");
-            setInterval(() => {
+            setTimeout(() => {
                 setPasswordErrorMessage("");
             }, 2000)
             return false;

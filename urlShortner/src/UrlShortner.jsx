@@ -25,6 +25,7 @@ const UrlShortner = () => {
         }
         if (shortnedUrl.trim() === "") {
             setCopied("Copy Failed.")
+            setTimeout(() => setCopied(""), 3000)
         }
     };
 
