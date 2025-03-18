@@ -3,7 +3,7 @@ import React from 'react'
 const Background = () => {
     return (
         <div>
-            <ul class="background">
+            <ul className="background">
                 <li></li>
                 <li></li>
                 <li></li>

@@ -8,6 +8,7 @@ const App = () => {
     <div className='main'>
         <Background/>
         <Login/>
+        {/* <SignUp/> */}
     </div>
   )
 }

@@ -13,7 +13,10 @@ const SignUp = () => {
     const [nameErrorMessage, setNameErrorMessage] = useState("");
     const [emailErrorMessage, setEmailErrorMessage] = useState("");
     const [passwordErrorMessage, setPasswordErrorMessage] = useState("");
-    const [page, setPage] = useState("Login");
+    // const [page, setPage] = useState("Login");
+
+
+
     // Handling Name Changing
     const handleChangeName = (e) => {
 
@@ -167,6 +170,7 @@ const SignUp = () => {
         setEmailErrorMessage("");
         setPasswordErrorMessage("");
         alert("SignUp Successfully!")
+        localStorage.setItem("user", JSON.stringify(user));
 
 
     }

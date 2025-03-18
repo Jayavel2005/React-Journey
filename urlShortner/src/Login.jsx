@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const Login = () => {
     const userDetails = {
@@ -9,7 +9,19 @@ const Login = () => {
     const [user, setUser] = useState(userDetails);
     const [emailErrorMessage, setEmailErrorMessage] = useState("");
     const [passwordErrorMessage, setPasswordErrorMessage] = useState("");
-    const [page, setPage] = useState("Login")
+    const [page, setPage] = useState("Login");
+
+
+    useEffect(() => {
+        const storedUser = JSON.parse(localStorage.getItem("user")) || {};
+        const email = storedUser.userEmail;
+        const password = storedUser.userPassword
+        setUser((prevUser) => (
+            { ...prevUser, email, password }
+        ))
+
+
+    }, [])
 
 
 
