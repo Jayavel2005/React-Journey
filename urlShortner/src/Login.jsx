@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 
-const Login = () => {
+const Login = ({ setPage }) => {
     const userDetails = { email: "", password: "" };
     const storedUserDetails = { storedUserEmail: "", storedPassword: "" };
 
     const [user, setUser] = useState(userDetails);
     const [emailErrorMessage, setEmailErrorMessage] = useState("");
     const [passwordErrorMessage, setPasswordErrorMessage] = useState("");
-    const [page, setPage] = useState("Login");
     const [storedUser, setStoredUser] = useState(storedUserDetails);
 
     useEffect(() => {
@@ -34,7 +33,7 @@ const Login = () => {
         if (user.email === storedUser.storedUserEmail && user.password === storedUser.storedPassword) {
             setEmailErrorMessage("");
             setPasswordErrorMessage("");
-            alert("Logged in Successfully!");
+            setPage("Home")
         } else {
             if (user.email !== storedUser.storedUserEmail) setEmailErrorMessage("Email is incorrect.");
             if (user.password !== storedUser.storedPassword) setPasswordErrorMessage("Password is incorrect.");
@@ -43,7 +42,7 @@ const Login = () => {
 
     const handleChangeEmail = (event) => {
         const newEmail = event.target.value;
-        setUser(prevUser => ({ ...prevUser, email : newEmail}));
+        setUser(prevUser => ({ ...prevUser, email: newEmail }));
         validateEmail(newEmail)
     };
 

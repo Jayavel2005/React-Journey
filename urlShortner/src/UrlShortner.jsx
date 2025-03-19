@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaCopy } from "react-icons/fa";
 
-const UrlShortner = () => {
+const UrlShortner = ({ setPage }) => {
     const [url, setUrl] = useState("");
     const [shortnedUrl, setShortnedUrl] = useState("");
     const [copied, setCopied] = useState("");
@@ -31,40 +31,49 @@ const UrlShortner = () => {
 
 
     return (
-        <div className='urlshortner--main'>
-            {/* Heading */}
-            <h1>
-                <span style={{ color: '#108ae7' }}>URL</span> SHORTNER
-            </h1>
+        <div>
+            <div className='urlshortner--main'>
+                {/* Heading */}
+                <h1>
+                    <span style={{ color: '#108ae7' }}>URL</span> SHORTNER
+                </h1>
 
-            {/* Input Box */}
-            <div className="link--container">
-                <div className='input--box'>
-                    <input
-                        type="text"
-                        placeholder='Paste your link...'
-                        value={url}
-                        onChange={handleUrlChange}
-                    />
-                    <button onClick={shortUrl}>Convert</button>
+                {/* Input Box */}
+                <div className="link--container">
+                    <div className='input--box'>
+                        <input
+                            type="text"
+                            placeholder='Paste your link...'
+                            value={url}
+                            onChange={handleUrlChange}
+                        />
+                        <button onClick={shortUrl}>Convert</button>
+                    </div>
                 </div>
-            </div>
 
-            {/* Clipboard Box */}
+                {/* Clipboard Box */}
 
-            <div className="clipboard--main">
-                <div className='clipboard--textfieldGroup'>
-                    <input className='clipboard--textfield' readOnly value={shortnedUrl} />
-                    <button className='copy--button' onClick={copyToClipboard}>
-                        <FaCopy />
-                    </button>
+                <div className="clipboard--main">
+                    <div className='clipboard--textfieldGroup'>
+                        <input className='clipboard--textfield' readOnly value={shortnedUrl} />
+                        <button className='copy--button' onClick={copyToClipboard}>
+                            <FaCopy />
+                        </button>
+                    </div>
+                    <span
+                        className='informative--message'
+                        style={{ color: copied === "Link Copied Successfully." ? "green" : "red", display: copied ? "block" : "none" }}
+                    >{copied}</span>
                 </div>
-                <span
-                    className='informative--message'
-                    style={{ color: copied === "Link Copied Successfully." ? "green" : "red", display: copied ? "block" : "none" }}
-                >{copied}</span>
-            </div>
 
+
+
+            </div>
+            <button
+                className='logout--button'
+                onClick={() => {
+                    setPage("Login")
+                }}>Logout</button>
         </div>
     );
 };

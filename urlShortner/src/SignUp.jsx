@@ -1,7 +1,7 @@
-import React, { use } from 'react';
+
 import { useState } from 'react';
 
-const SignUp = () => {
+const SignUp = ({ setPage }) => {
 
     const userDetails = {
         userName: "",
@@ -13,7 +13,11 @@ const SignUp = () => {
     const [nameErrorMessage, setNameErrorMessage] = useState("");
     const [emailErrorMessage, setEmailErrorMessage] = useState("");
     const [passwordErrorMessage, setPasswordErrorMessage] = useState("");
-    // const [page, setPage] = useState("Login");
+
+
+    const pageState = () => {
+        setPage("Login")
+    }
 
 
 
@@ -170,6 +174,7 @@ const SignUp = () => {
         setEmailErrorMessage("");
         setPasswordErrorMessage("");
         alert("SignUp Successfully!")
+        setPage("Home");
         localStorage.setItem("user", JSON.stringify(user));
 
 
@@ -230,7 +235,7 @@ const SignUp = () => {
                 {/* Sign Up button */}
                 <div className="form--group">
                     <button className='signup--button' onClick={handleSignUp}>Sign Up</button>
-                    <span className='login--link'>Already have an account ? <a href="#">Login</a></span>
+                    <span className='login--link'>Already have an account ? <a href="#" onClick={pageState}>Login</a></span>
                 </div>
 
 
