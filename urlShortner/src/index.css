@@ -135,11 +135,6 @@ input::placeholder {
 
 }
 
-.link--container {
-  display: flex;
-  justify-content: center;
-
-}
 
 .input--box {
   border: 1px solid #ff8400;
@@ -230,6 +225,11 @@ input::placeholder {
   background-color: #ff8400;
 }
 
+
+
+.page--loader{
+  width: 200px;
+}
 
 /* Background Animation */
 .background li {

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Preloader from "./Preloader";
 
 const Login = ({ setPage }) => {
     const userDetails = { email: "", password: "" };
@@ -33,6 +34,7 @@ const Login = ({ setPage }) => {
         if (user.email === storedUser.storedUserEmail && user.password === storedUser.storedPassword) {
             setEmailErrorMessage("");
             setPasswordErrorMessage("");
+            
             setPage("Home")
         } else {
             if (user.email !== storedUser.storedUserEmail) setEmailErrorMessage("Email is incorrect.");
