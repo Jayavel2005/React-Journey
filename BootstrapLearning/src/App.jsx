@@ -116,7 +116,7 @@ const App = () => {
 
     // </Container>
     <>
-      <Container fluid className=' bg-dark'>
+      {/* <Container fluid className=' bg-dark'>
         <h1 className="text-bg-dark fs-1 fw-bold">Hello</h1>
       </Container>
 
@@ -131,7 +131,41 @@ const App = () => {
         <Row>
           <Col className="text-center">Fluid Container with Full Width</Col>
         </Row>
+      </Container> */}
+
+      {/* Grid Systems */}
+      <Container>
+        <Row>
+          <Col className="bg-primary text-white text-center p-3">Column 1</Col>
+          <Col className="bg-secondary text-white text-center p-3">Column 2</Col>
+          <Col className="bg-success text-white text-center p-3">Column 3</Col>
+        </Row>
+
+        <Row className="mt-3">
+          <Col md={4} className="bg-danger text-white text-center p-3">Column 1 (md=4)</Col>
+          <Col md={4} className="bg-warning text-dark text-center p-3">Column 2 (md=4)</Col>
+          <Col md={4} className="bg-info text-white text-center p-3">Column 3 (md=4)</Col>
+        </Row>
+
+        <Row className="mt-3">
+          <Col sm={6} md={3} className="bg-dark text-white text-center p-3">Column 1 (sm=6, md=3)</Col>
+          <Col sm={6} md={3} className="bg-light text-dark text-center p-3">Column 2 (sm=6, md=3)</Col>
+          <Col sm={6} md={3} className="bg-primary text-white text-center p-3">Column 3 (sm=6, md=3)</Col>
+          <Col sm={6} md={3} className="bg-secondary text-white text-center p-3">Column 4 (sm=6, md=3)</Col>
+        </Row>
+
+        <Row className="mt-3">
+          <Col xs={12} md={8} className="bg-success text-white text-center p-3">Column 1 (xs=12, md=8)</Col>
+          <Col xs={6} md={4} className="bg-danger text-white text-center p-3">Column 2 (xs=6, md=4)</Col>
+        </Row>
+
+        <Row className="mt-3">
+          <Col xs={{ span: 6, offset: 0 }} className="bg-warning text-dark text-center p-3">
+            Offset Column (xs=6, offset=3)
+          </Col>
+        </Row>
       </Container>
+
     </>
 
 
