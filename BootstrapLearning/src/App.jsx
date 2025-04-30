@@ -66,26 +66,74 @@ const App = () => {
     //   /> {/* Responsive image with rounded corners, thumbnail styling, and full width */}
 
     // </Container>
-    <Container>
-        {/* Theme colors and colors usage */}
-        <p className=' display-1 fw-bold text-bg-primary text-black'>Hello World!</p>
-        {/* Light , grey and muted */}
-        <p className=' display-1 fw-bold text-muted text-bg-warning'>Hello World!</p>
+    // <Container>
+    //     {/* Theme colors and colors usage */}
+    //     <p className=' display-1 fw-bold text-bg-primary text-black'>Hello World!</p>
+    //     {/* Light , grey and muted */}
+    //     <p className=' display-1 fw-bold text-muted text-bg-warning'>Hello World!</p>
 
-        {/* Opacity */}
-        <p className=' display-1 fw-bold opacity-50 text-primary'>Opacity</p>
+    //     {/* Opacity */}
+    //     <p className=' display-1 fw-bold opacity-50 text-primary'>Opacity</p>
 
-        {/* Box model */}
-        <p className=' display-1 fw-bold p-5 text-info text-bg-dark'>Padding</p> {/* padding from 1 to 5 */}
+    //     {/* Box model */}
+    //     <p className=' display-1 fw-bold p-5 text-info text-bg-dark'>Padding</p> {/* padding from 1 to 5 */}
 
-        {/* Padding  t-top, b-bottom, s-start, e-end*/}
-        <p className=' display-1 fw-bold p-5 m-5 text-center text-info text-bg-dark'>Padding</p> {/* padding from 1 to 5 */}
+    //     {/* Padding  t-top, b-bottom, s-start, e-end*/}
+    //     <p className=' display-1 fw-bold p-5 m-5 text-center text-info text-bg-dark'>Padding</p> {/* padding from 1 to 5 */}
 
-    {/* Borders */}
-    <p className="border border-danger border-bottom-4 display-1 fw-bold text-bg-info text-light rounded-pill text-center">Hello React</p>
+    // {/* Borders */}
+    // <p className="border border-danger border-bottom-4 display-1 fw-bold text-bg-info text-light rounded-pill text-center">Hello React</p>
 
 
-    </Container>
+    // </Container>
+    // <Container>
+    //   {/* display hide and show menu*/}
+    //   <p className='d-inline text-bg-dark display-1 fw-bold'>Hello</p>
+
+    //   {/* flex */}
+    //   <div className="d-flex flex-column align-items-end">
+    //     <p className="m-2 p-2 text-bg-dark display-1 fw-bolder align-self-center">Flex1</p>
+    //     <p className="m-2 p-2 text-bg-dark display-1  fw-bolder">Flex2</p>
+    //     <p className="m-2 p-2 text-bg-dark display-1 fw-bolder align-self-start">Flex3</p>
+
+    //   </div>
+
+    // {/* Stack */}
+    // <div className="vstack gap-1 align-items-center">
+    //   <p className="m-3 p-3 text-bg-secondary w-50">vstack</p>
+    //   <p className="m-3 p-3 text-bg-secondary w-50">vstack</p>
+    //   <p className="m-3 p-3 text-bg-secondary w-50">vstack</p>
+
+    // </div>
+
+    // {/* h stack */}
+    // <div className="hstack gap-1 justify-content-start">
+    //   <p className="m-3 p-3 text-bg-secondary w-50">vstack</p>
+    //   <p className="m-3 p-3 text-bg-secondary w-50">vstack</p>
+    //   <p className="m-3 p-3 text-bg-secondary w-50">vstack</p>
+
+    // </div>
+
+    // </Container>
+    <>
+      <Container fluid className=' bg-dark'>
+        <h1 className="text-bg-dark fs-1 fw-bold">Hello</h1>
+      </Container>
+
+      <Container className="border border-primary my-3">
+        <Row>
+          <Col md={6} lg={12} className="bg-light text-center p-3">Column 1</Col>
+          <Col md={6} lg={12} className="bg-secondary text-center text-white p-3">Column 2</Col>
+          <Col md={6} lg={12} className="bg-light text-center p-3">Column 3</Col>
+        </Row>
+      </Container>
+      <Container fluid className="bg-info text-white p-5">
+        <Row>
+          <Col className="text-center">Fluid Container with Full Width</Col>
+        </Row>
+      </Container>
+    </>
+
 
 
   )
